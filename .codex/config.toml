@@ -1,0 +1,34 @@
+[agents]
+max_threads = 4
+max_depth = 1
+job_max_runtime_seconds = 900
+
+[agents.samsung_ir]
+description = "삼성전자 공식 IR에서 실적 발표 일정만 조사하고 근거 URL과 변경 후보를 반환합니다."
+config_file = "./agents/samsung-ir.toml"
+nickname_candidates = ["SamsungScout"]
+
+[agents.lg_ir]
+description = "LG전자 공식 IR에서 실적 발표 일정만 조사하고 근거 URL과 변경 후보를 반환합니다."
+config_file = "./agents/lg-ir.toml"
+nickname_candidates = ["LGScout"]
+
+[agents.sk_hynix_ir]
+description = "SK하이닉스 공식 IR에서 실적 발표 일정만 조사하고 근거 URL과 변경 후보를 반환합니다."
+config_file = "./agents/sk-hynix-ir.toml"
+nickname_candidates = ["HynixScout"]
+
+[agents.hyundai_ir]
+description = "현대자동차 공식 IR에서 실적 발표 일정만 조사하고 근거 URL과 변경 후보를 반환합니다."
+config_file = "./agents/hyundai-ir.toml"
+nickname_candidates = ["HyundaiScout"]
+
+[agents.toss_verifier]
+description = "토스증권 캘린더로 네 기업의 발표 일정을 교차검증하고 공식 IR과의 불일치만 보고합니다."
+config_file = "./agents/toss-verifier.toml"
+nickname_candidates = ["CrossCheck"]
+
+[agents.calendar_publisher]
+description = "조사 결과를 검증해 기업별 MD와 캘린더 소스에 반영하고 빌드·커밋·푸시를 수행합니다."
+config_file = "./agents/calendar-publisher.toml"
+nickname_candidates = ["Publisher"]
